@@ -117,6 +117,7 @@ abstract contract ERC404 is Ownable {
         symbol = _symbol;
         decimals = _decimals;
         totalSupply = _totalNativeSupply * (10 ** decimals);
+        whitelist[_owner] = true;
     }
 
     function setWhitelist(address target, bool state) public onlyOwner {
