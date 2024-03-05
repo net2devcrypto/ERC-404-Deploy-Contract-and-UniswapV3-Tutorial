@@ -21,12 +21,10 @@ Click for video:
 Part2 "Contracts" Folder Contents:
 
 ```shell
-N2D-ERC6551-Account.sol
-N2D-ERC6551-Registry.sol
-N2D-Sample-Fake-USDT.sol
-N2D-Sample-NFT-Collection.sol
+N2DR-ERC404-Semifungibles.sol
 ```
-Follow the tutorial video for guidance in using the contract files. 
+<h4>Import, compile and deploy the smart contract using Remix or any other environment like Hardhat or Foundry.</h4>
+
 
 <h3>Part 3 Repo FINAL</h3>
 
