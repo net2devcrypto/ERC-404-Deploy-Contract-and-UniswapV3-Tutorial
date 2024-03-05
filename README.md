@@ -10,7 +10,7 @@ The Ultimate ERC-404 Token Tutorial - Deploy your own ERC-404 then provide liqui
 ** USE IT AT YOUR OWN RISK** **I'M NOT RESPONSIBLE FOR ANY USE, ISSUES ETC.. **
 
 ENTIRE PLAYLIST:
-<a href="https://www.youtube.com/watch?v=0nA8E6ZEJ5M&list=PLLkrq2VBYc1aWH2WwRaEZVa_YorLR6Ht2" target="_blank"><img src="https://github.com/net2devcrypto/misc/blob/main/ytlogo2.png" width="90" height="20"></a>
+<a href="https://www.youtube.com/playlist?list=PLLkrq2VBYc1ZTGE4wTlff2vczjn-YSUan" target="_blank"><img src="https://github.com/net2devcrypto/misc/blob/main/ytlogo2.png" width="90" height="20"></a>
 
 <h3>Part 2 Repo</h3>
 
