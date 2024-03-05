@@ -22,10 +22,11 @@ Part2 "Contracts" Folder Contents:
 
 ```shell
 N2DR-ERC404-Semifungibles.sol
+ERC404.sol
 ```
 1- Import both N2DR-ERC404-Semifungibles.sol and ERC404.sol contracts to Remix or any other environment like Hardhat or Foundry.
 
-  Update your contract with the info: 
+  Update N2DR-ERC404-Semifungibles.sol contract with your info: 
   
     ERC404("COLLECTION NAME", "TOKENSYMBOL", TOKENDECIMALS, TOTALSUPPLY
     balanceOf[_owner] = TOTALSUPPLY * 10**18;
@@ -40,12 +41,14 @@ example:
     }
 ```
 
-
-2- Update the token symbol, Compile the N2DR-ERC404-Semifungibles.sol contract and 
+then compile and deploy!
 
 2- Whitelist the contract owner wallet address by calling the setWhitelist function on the contract.
 
 3- Update the token metadata description by calling the setMetadataDescription function on the contract.
 
-4-
+4- Update the token dataURI with the path to the nft pictures by calling the setDataURI function on the contract.
+
+
+Please follow tutorial video for more details.
 
