@@ -25,6 +25,7 @@ N2DR-ERC404-Semifungibles.sol
 ```
 <h4>Import, compile and deploy the smart contract using Remix or any other environment like Hardhat or Foundry.</h4>
 
+<h4>Make sure to Whitelist your contract deployer wallet. </h4>
 
 <h3>Part 3 Repo FINAL</h3>
 
