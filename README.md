@@ -43,11 +43,9 @@ example:
 
 then compile and deploy!
 
-2- Whitelist the contract owner wallet address by calling the setWhitelist function on the contract.
+2- Update the token metadata description by calling the setMetadataDescription function on the contract.
 
-3- Update the token metadata description by calling the setMetadataDescription function on the contract.
-
-4- Update the token dataURI with the path to the nft pictures by calling the setDataURI function on the contract.
+3- Update the token dataURI with the path to the nft pictures by calling the setDataURI function on the contract.
 
 
 Please follow tutorial video for more details.
