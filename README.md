@@ -28,7 +28,8 @@ N2DR-ERC404-Semifungibles.sol
   Update your contract with the info: 
   
     ERC404("COLLECTION NAME", "TOKENSYMBOL", TOKENDECIMALS, TOTALSUPPLY
-
+    balanceOf[_owner] = TOTALSUPPLY * 10**18;
+    
 example: 
 
 ```shell
