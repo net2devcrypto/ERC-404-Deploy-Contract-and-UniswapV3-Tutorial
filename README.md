@@ -1,7 +1,7 @@
 # ERC-404-Contract-UniswapV3Pool-Tutorial
 The Ultimate ERC-404 Token Tutorial - Deploy your own ERC-404 then provide liquidity with an UniswapV3 Pool
 
-<img src="https://raw.githubusercontent.com/net2devcrypto/misc/main/erc-6551-frontend.png" width="650" height="470">
+<img src="https://raw.githubusercontent.com/net2devcrypto/misc/main/erc404.jpg" width="650" height="470">
 
 ** THE FILES ATTACHED TO THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY **
 
