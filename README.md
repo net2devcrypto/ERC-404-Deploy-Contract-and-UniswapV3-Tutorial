@@ -23,57 +23,28 @@ Part2 "Contracts" Folder Contents:
 ```shell
 N2DR-ERC404-Semifungibles.sol
 ```
-<h4>Import, compile and deploy the smart contract using Remix or any other environment like Hardhat or Foundry.</h4>
+1- Import both N2DR-ERC404-Semifungibles.sol and ERC404.sol contracts to Remix or any other environment like Hardhat or Foundry.
 
-<h4>Make sure to Whitelist your contract deployer wallet. </h4>
+  Update your contract with the info: 
+  
+    ERC404("COLLECTION NAME", "TOKENSYMBOL", TOKENDECIMALS, TOTALSUPPLY
 
-<h3>Part 3 Repo FINAL</h3>
-
-Click for video:
-
-<a href="https://youtu.be/NQL-zBslGgM" target="_blank"><img src="https://github.com/net2devcrypto/misc/blob/main/ytlogo2.png" width="150" height="40"></a>
-
-# How to install and test the front-end app.
-
-<h3>Step 1</h3>
-
-Download the folder "ERC-6551-Frontend", then via terminal or shell navigate to the folder and install dependencies, make sure to enable legacy peer dependencies:
+example: 
 
 ```shell
-cd ERC-6551-Frontend
-npm i --legacy-peer-deps
+    constructor(address _owner)
+        ERC404("Net2Dev SemiFungibles Rewards", "N2DR", 18, 10000, _owner)
+    {
+        balanceOf[_owner] = 10000 * 10**18;
+    }
 ```
 
-<h3>Step 2 (OPTIONAL) </h3>
 
-If you don't have existing contracts deployed, you may deploy the contract files located inside the repo folder "Contracts". Make sure to update your NFT Collection metadata BaseURI to point to the IPFS CID. Follow the tutorial video for more info. If you deployed a new NFT Collection contract to test, Make sure you mint some NFT's to validate the ERC-6551 Wallet creation.
+2- Update the token symbol, Compile the N2DR-ERC404-Semifungibles.sol contract and 
 
-```shell
-N2D-Sample-NFT-Collection.sol
-N2D-ERC6551-Account.sol
-N2D-ERC6551-Registry.sol
-N2D-Sample-Fake-USDT.sol
-```
+2- Whitelist the contract owner wallet address by calling the setWhitelist function on the contract.
 
-<h3>Step 3</h3>
+3- Update the token metadata description by calling the setMetadataDescription function on the contract.
 
-Open the project folder on your favorite editor and update the "components/config.js" file with all your deployed smart contract addresses:
+4-
 
-```shell
-const nftContractAddr = 'NFT_COLLECTION_CONTRACT_ADDRESS';
-const erc6551RegistryAddr = 'ERC_6551_REGISTRY_CONTRACT_ADDRESS';
-const erc6551BaseAccount = 'ERC_6551_ACCOUNT_CONTRACT_ADDRESS';
-const usdtContractAddr = 'FAKE_USDT_TOKEN_CONTRACT_ADDRESS';
-```
-
-"CTRL + S"  to save!
-
-
-<h3>Step 4</h3>
-
-Read the "readme-first" located inside the "ERC-6551-Frontend" folder then run the application and test! Follow the tutorial vid for more info.
-
-```shell
-cd ERC-6551-Frontend
-npm run dev
-```
