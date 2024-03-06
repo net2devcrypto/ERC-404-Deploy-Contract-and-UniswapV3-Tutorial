@@ -31,6 +31,7 @@ contract N2DErc404 is ERC404 {
         ERC404("Net2Dev SemiFungibles Rewards", "N2DR", 18, 10000, _owner)
     {
         balanceOf[_owner] = 10000 * 10**18;
+        whitelist[_owner] = true;
     }
 
     function setDataURI(string memory _dataURI) public onlyOwner {
