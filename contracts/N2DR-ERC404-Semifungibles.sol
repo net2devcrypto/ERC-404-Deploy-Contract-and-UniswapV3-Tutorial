@@ -21,6 +21,7 @@ TERMS SPECIFIED ABOVE.
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/Strings.sol";
+import "ERC404.sol";
 
 contract N2DErc404 is ERC404 {
     string public dataURI;
