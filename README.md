@@ -4,9 +4,7 @@ The Ultimate ERC-404 Token Tutorial - Deploy your own ERC-404 then provide liqui
 <img src="https://raw.githubusercontent.com/net2devcrypto/misc/main/erc404.jpg" width="650" height="370">
 
 ** THE FILES ATTACHED TO THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY **
-
 ** NOT FINANCIAL ADVISE **
-
 ** USE IT AT YOUR OWN RISK** **I'M NOT RESPONSIBLE FOR ANY USE, ISSUES ETC.. **
 
 ENTIRE PLAYLIST:
