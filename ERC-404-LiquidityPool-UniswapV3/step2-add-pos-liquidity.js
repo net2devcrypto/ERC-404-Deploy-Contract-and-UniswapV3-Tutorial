@@ -67,7 +67,7 @@ async function addPoolLiquidity() {
         to: positionAddress,
         value: value,
         from: signer.address,
-        gasLimit: 3000000
+        gasLimit: 10000000
     };
     console.log('Executing Liquidity...');
     const tx = await signer.sendTransaction(transaction);
