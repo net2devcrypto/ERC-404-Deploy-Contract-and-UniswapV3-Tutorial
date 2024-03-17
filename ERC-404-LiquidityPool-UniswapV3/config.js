@@ -15,7 +15,7 @@ const poolFee = 10000;      // Set the Uniswap pool fee in basis points, example
 
 /* 
 The amount of ERC-404 transferred could be higher/lower depending on the price curve.
-If you are transferring an aprox 35 ERC-404 tokens, add an aprox 2-5% extra overhead of USDT:
+If you are transferring an aprox 35 ERC-404 tokens, add an aprox 25-35% extra overhead of USDT:
 
  erc404Liquidity * erc404price = usdtLiquidity
  35 * 300 = 10500
