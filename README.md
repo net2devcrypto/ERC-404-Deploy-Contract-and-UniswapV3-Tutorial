@@ -102,7 +102,7 @@ IT MUST HAVE BOTH ERC-404 and FAKE USDT LIQUIDITY AMOUNTS SPECIFIED AVAILABLE BE
 ```
 CTRL + S to save!!!
 
-3- Proceed to create the pool and pre-approve the position contract address to transfer both pool tokens.
+4- Proceed to create the pool and pre-approve the position contract address to transfer both pool tokens.
 
 ```shell
 node step1-deploy-pool.js
@@ -116,7 +116,7 @@ const poolAddress = "SWAP_POOL_SMART_CONTRACT"   // Obtain the address after exe
 
 CTRL + S to save!!!
 
-4- Proceed to open the position and add the required liquidity.
+5- Proceed to open the position and add the required liquidity.
 
 ```shell
 node step2-add-pos-liquidity.js
