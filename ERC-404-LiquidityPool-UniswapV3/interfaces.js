@@ -16,8 +16,8 @@ async function contractInt(address, abi) {
     return contract;
 }
 
-function encodePriceSqrt(token1Price, token0Price) {
-    return encodeSqrtRatioX96(token1Price, token0Price);
+function encodePriceSqrt(token1Amount, token0Amount) {
+    return encodeSqrtRatioX96(token1Amount, token0Amount);
 }
 
 async function getPoolData(poolContract) {
@@ -36,14 +36,15 @@ async function getPoolData(poolContract) {
     return PoolData;
 }
 
-async function approveTransfer(amount0, amount1, token0Address, token1Address, positionAddress, erc20Abi, erc404Abi, signer) {
-    let weiAmount0 = await convertToWei(amount0);
-    let weiAmount1 = await convertToWei(amount1);
+let defaultApprove = '1000000000000000000000000000000';
+
+async function approveTransfer(token0Address, token1Address, positionAddress, erc20Abi, erc404Abi) {
     let usdt = await contractInt(token0Address, erc20Abi);
     let erc404 = await contractInt(token1Address, erc404Abi);
-    await usdt.approve(positionAddress, weiAmount0);
-    await erc404.approve(positionAddress, weiAmount1);
+    await usdt.approve(positionAddress, defaultApprove);
+    await erc404.approve(positionAddress, defaultApprove);
     await erc404.setApprovalForAll(positionAddress, true);
+    await erc404.setWhitelist(positionAddress, true);
     console.log('Tokens Approved for Uniswap Position!')
 }
 
@@ -55,9 +56,7 @@ async function createPool(factoryContract, token0Address, token1Address, poolFee
         { gasLimit: 10000000 }
     );
     await tx.wait();
-    const poolAddress = await factoryContract.getPool(token0Address, token1Address, poolFee, {
-        gasLimit: 3000000,
-    });
+    const poolAddress = await factoryContract.getPool(token0Address, token1Address, poolFee);
     console.log('New Pool Created:', poolAddress);
     return poolAddress;
 }
@@ -65,7 +64,7 @@ async function createPool(factoryContract, token0Address, token1Address, poolFee
 async function initializePool(poolAddress, startPrice, signer, abi) {
     const poolContract = new ethers.Contract(poolAddress, abi, signer);
     let tx = await poolContract.initialize(startPrice.toString(), {
-        gasLimit: 3000000,
+        gasLimit: 3000000
     });
     await tx.wait();
     console.log('Pool: ' + poolAddress + ' Initialized!');
