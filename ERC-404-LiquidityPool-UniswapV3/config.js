@@ -1,27 +1,35 @@
 // READ the disclaimer.md file located in this folder before you continue!!!
 
-const key = "DEPLOYER_WALLET_PRIVATE_KEY"; // USE A WALLET ONLY WITH TESTNET TOKENS!!!
-const rpc = "RPC_ADDRESS";
+const key = "0xPRIVATE_KEY"; // USE A WALLET ONLY WITH TESTNET TOKENS!!!
+const rpc = "RPC_ADDRESS"; // Find Available RPC Testnet Addresses: chainlist.org!
 const chainID = 11155111; // Example Ethereum Sepolia Testnet
 
-const usdtAddress = "FAKE_USDT_TOKEN_CONTRACT_ADDRESS"; //token0
-const erc404Address = "ERC-404-TOKEN_CONTRACT_ADDRESS"; //token1
+const usdtAddress = "FAKE_USDT_CONTRACT_ADDRESS"; // Liquidity Pool Token Contract
+const erc404Address = "ERC-404_CONTRACT_ADDRESS"; // ERC-404 Token Contract
 
-const positionAddress = "ENTER_POSITION_CONTRACT_ADDRESS"; // Find 
-const factoryAddress = "POOL_FACTORY_SMART_CONTRACT_ADDRESS";
-const poolAddress = "ENTER_POOL_SMART_CONTRACT_ADDRESS"       // Obtain the address after executing step1-deploy-pool.js
-const poolFee = 10000;      // Sets the pool in basis points, example 10000 = 1%
-let erc404price = 300;     // Price per ERC-404 Token in USDT
-let erc404Amount = 100;    // Amount of ERC-404 Tokens to deposit in Pool
-let usdtAmount = 30000;    // Amount of Fake USDT to deposit in Pool
+// https://docs.uniswap.org/contracts/v3/reference/deployments
+const positionAddress = "POSITION_SMART_CONTRACT_ADDRESS"; // NonfungiblePositionManager Sepolia Address https://docs.uniswap.org/contracts/v3/reference/deployments
+const factoryAddress = "FACTORY_SMART_CONTRACT_ADDRESS"; // UniswapV3Factory Sepolia Address https://docs.uniswap.org/contracts/v3/reference/deployments
+const poolAddress = "SWAP_POOL_SMART_CONTRACT"   // Obtain the address after executing step1-deploy-pool.js then update here!
+const poolFee = 10000;      // Set the Uniswap pool fee in basis points, example 10000 = 1%
 
 /* 
-To Confirm the Price per token to the Pool deposit amount:
+The amount of ERC-404 transferred could be higher/lower depending on the price curve.
+If you are transferring an aprox 35 ERC-404 tokens, add an aprox 2-5% extra overhead of USDT:
 
- usdtAmount / erc404Amount = erc404price
- 30000 / 100 = 300 USDT Per ERC-404
-
+ erc404Liquidity * erc404price = usdtLiquidity
+ 35 * 300 = 10500
+ Add an extra 3500 usdt to compensate the price curve.
+ example = 10500 + 3500
+ usdtLiquidity = 14000
 */
+
+let erc404price = 300;     // Price per ERC-404 Token in USDT
+let usdtLiquidity = 14000;    // Amount of Fake USDT Tokens to deposit in pool + extra overhead for price curve.
+let erc404Liquidity = 35;    // Amount of ERC-404 - NFTs in pool.
+
+
+
 
 module.exports = { 
     key,
@@ -32,8 +40,8 @@ module.exports = {
     poolAddress,
     poolFee,
     erc404price,
-    erc404Amount,
-    usdtAmount,
+    usdtLiquidity,
+    erc404Liquidity,
     factoryAddress,
     chainID
 };
