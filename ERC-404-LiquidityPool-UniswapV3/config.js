@@ -28,9 +28,6 @@ let erc404price = 300;     // Price per ERC-404 Token in USDT
 let usdtLiquidity = 14000;    // Amount of Fake USDT Tokens to deposit in pool + extra overhead for price curve.
 let erc404Liquidity = 35;    // Amount of ERC-404 - NFTs in pool.
 
-
-
-
 module.exports = { 
     key,
     rpc,
