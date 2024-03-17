@@ -4,14 +4,14 @@ const { factoryAbi, poolAbi } = require('./abis/uniswapabi.js');
 const erc20Abi = require('./abis/erc20abi.json')
 const erc404Abi = require('./abis/erc404abi.json')
 const {approveTransfer, contractInt, getSigner, encodePriceSqrt, initializePool, createPool} = require('./interfaces');
-const { erc404Address, usdtAddress, positionAddress, factoryAddress, poolFee, erc404Amount, erc404price, usdtAmount } = require('./config');
+const { erc404Address, usdtAddress, positionAddress, factoryAddress, poolFee, erc404price } = require('./config');
 
 /*
 Executing the function will open a liquidity pool and position 
 with the following already provided values in config.js.
 erc404price
-erc404amount
-usdtamount
+usdtLiquidity
+erc404Liquidity
 poolFee
 
 Provide all required values in the config.js file.
@@ -26,16 +26,15 @@ node step1-deploy-pool.js
 
 async function deployPool() {
     let signer = await getSigner();
-    await approveTransfer(usdtAmount, erc404Amount, usdtAddress, erc404Address, positionAddress, erc20Abi, erc404Abi, signer.address);
+    await approveTransfer(usdtAddress, erc404Address, positionAddress, erc20Abi, erc404Abi);
     let factory = await contractInt(factoryAddress, factoryAbi);
     let poolAddress = await factory.getPool(usdtAddress, erc404Address, poolFee);
-    let price = encodePriceSqrt(erc404price, 1);
+    let price = encodePriceSqrt(1, erc404price);
     if (poolAddress === '0x0000000000000000000000000000000000000000') {
         console.log("Creating Pool...");
         poolAddress = await createPool(factory, usdtAddress, erc404Address, poolFee);
         await initializePool(poolAddress, price, signer, poolAbi);
     }
-
 }
 
 deployPool()
