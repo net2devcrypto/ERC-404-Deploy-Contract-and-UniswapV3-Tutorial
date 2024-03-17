@@ -1,6 +1,6 @@
 // READ the disclaimer.md file located in this folder before you continue!!!
 
-const key = "0xPRIVATE_KEY"; // USE A WALLET ONLY WITH TESTNET TOKENS!!!
+const key = "0xPRIVATE_KEY"; // ONLY USE THE ERC-404 and FAKE USDT DEPLOYER WALLET!!!
 const rpc = "RPC_ADDRESS"; // Find Available RPC Testnet Addresses: chainlist.org!
 const chainID = 11155111; // Example Ethereum Sepolia Testnet
 
